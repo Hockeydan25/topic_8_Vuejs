@@ -5,7 +5,7 @@
     </head>
 
     <body>
-        <!-- manages how it looks in the web pages -->
+        <!-- Start app div blocking in wear on page appear, manages how it looks in the web pages -->
         <div id="app">
             <!-- all the page elements vue will manage will go here between the div id=app.   -->
             <h1>Hello Vue!</h1>
@@ -15,10 +15,10 @@
             <p> Added Exclamation Points: {{messageWithExclamationPoints}}</p>
             <button v-on:click="addExclamation">Add !</button>
             <button v-on:click="remove">Remove !</button>
-        </div>
-
-        <script>
-            // vue instance and manages the view in html.module or data
+        </div><!--end app div  -->
+                <!--script code start-->
+        <script> 
+            // vue instance and manages the view in html.module or data. look and click on braces find your starts and end pairs!
             let app = Vue.createApp({
                 data() {
                     return {//message hi will go inot the html paragragh.
@@ -58,6 +58,7 @@
             app.mount('#app') //attached to the div id app
 
 
-        </script>
-    </body>
+        </script><!--script end-->
+
+    </body><!--end of body frame and html frame. -->
 </html>
