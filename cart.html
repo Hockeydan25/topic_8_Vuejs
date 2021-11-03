@@ -1,0 +1,63 @@
+<html>
+    <head>
+            <script src="https://unpkg.com/vue@next"></script>
+
+            <style>
+                td, th {
+                    width: 25%;
+                    text-align: center;
+                }
+            </style>
+
+    </head>
+
+    <body>
+        <!-- Start app div blocking in wear on page appear, manages how it looks in the web pages -->
+        <div id="app"> <!--asscoicated with app.mount--> 
+          <table>
+              <tr>
+                  <th>Item </th>
+                  <th>Unit Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>                                   
+              </tr>
+
+               <tr>
+                   <td>{{ name }}</td>
+                   <td>{{ unitPrice }}</td>
+                   <td>
+                       <input type="number" v-model="quantity">
+                   </td> <!--comeback  add input -->
+                   <td>${{ total }}</td>
+               </tr> 
+
+          </table>
+
+        </div><!--end app div  -->
+                <!--script code start-->
+        <script> 
+          
+          let app = Vue.createApp( {
+              data() {
+                  return {
+                      name: 'hat',
+                      quantity: 1,
+                      unitPrice: 4.99
+                  }
+              },//computed framework.
+              computed:{
+                  total(){
+                      //computed price with formatting deciaml place restricted to 2.
+                      let totalPrice = this.quantity * this.unitPrice
+                      let formattedPrice = totalPrice.toFixed(2)
+                      return formattedPrice
+                  }
+              }       //end of computed. 
+          }) 
+
+           app.mount('#app') // associates Vue with app div section of html code.
+
+        </script><!--script end-->
+
+    </body><!--end of body frame and html frame. -->
+</html>
