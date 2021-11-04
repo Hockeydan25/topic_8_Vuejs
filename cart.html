@@ -14,16 +14,16 @@
     <body>
         <!-- Start app div blocking in wear on page appear, manages how it looks in the web pages -->
         <div id="app"> <!--asscoicated with app.mount--> 
-          <table>
-              <tr>
-                  <th>Item </th>
+          <table> <!--table1 section start.-->
+              <tr> <!--table row-->
+                  <th>Item </th> <!--table header-->
                   <th>Unit Price</th>
                   <th>Quantity</th>
                   <th>Total</th>                                   
               </tr>
 
-               <tr>
-                   <td>{{ name }}</td>
+               <tr> <!-- addional table row-->
+                   <td>{{ name }}</td> <!--table data-->
                    <td>{{ unitPrice }}</td>
                    <td>
                        <input type="number" v-model="quantity">
@@ -31,9 +31,9 @@
                    <td>${{ total }}</td>
                </tr> 
 
-          </table>
+          </table> <!-- end of table1 section.-->
 
-        </div><!--end app div  -->
+        </div><!--end app div.-->
                 <!--script code start-->
         <script> 
           
