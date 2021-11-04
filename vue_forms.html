@@ -17,7 +17,7 @@
             <!-- also connects with the clear button this.name then check if and else.  -->
             <!-- v-if element gives a new look Your anme doesn't appear until a name is typed
             maybe only use this with name. can creat a condition .length > 3 -->
-            <p v-if="name">
+            <p v-if="name">  <!--condional rendering (display) name.-->
                 Your name is: {{ name }}
                 <button v-on:click="clear">Clear input</button> <!--calls clear merthod when clicked-->
             </p> 

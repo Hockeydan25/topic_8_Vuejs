@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+              <script src="https://unpkg.com/vue@next"></script>
+    </head>
+
+    <body>
+        
+        <h1>Hello Vue Loops</h1>
+        <!-- Start app div blocking in wear on page appear, manages how it looks in the web pages -->
+        <div id="app">
+            <!-- template here -->
+           <label for="task">Please enter your TODO task: </label>
+           <input id="task" v-model="newTask">
+           <button v-on:click="addTask">AddTask</button>
+           <ul><!--unorder list-->
+                <!--the v-for loop creates the loop and variable task-->
+               <li v-for="task in taskList">{{ task }}</li> <!--list element, a list item.-->
+           </ul>
+            
+        </div><!--end app div  -->
+        <!--Labels are inline elements, so any element after a label will be on the same line. wanted the look 
+            of the label on top so adding style here to create that look. -->
+        <style>
+             input {
+                display: block;
+             }
+        </style>
+                <!--script code start-->
+        <script> 
+            // vue instance and manages the view in html.module or data. look and click on braces find your starts and end pairs!
+           let app = Vue.createApp({
+               data() {          // what data- can be strings, numbers, arrays, objects,. 
+                   return{          //tasklist is our data, data is a function that returns the propery tasklist.  
+                    newTask: '',
+                    taskList: [] //returning an array static?.
+                   }
+               },
+               methods: {
+                    addTask(){
+                        this.taskList.push(this.newTask)
+                        this.newTask = ''   //clears
+                    }   
+               }
+           })
+
+           app.mount('#app') // associates Vue with app div section of html code.
+
+        </script><!--script end-->
+
+    </body><!--end of body frame and html frame. -->
+</html>
